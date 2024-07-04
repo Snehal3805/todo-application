@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'todoapp';
+  title = 'pipesdirectives';
+  todoItem:string='';
+  todolist:Array<string>=[];
+
+  addTodo(){
+    this.todolist.push(this.todoItem)
+    this.todoItem='';
+  }
+  removeTodo(index: number){
+    this.todolist.splice(index ,1)
+  }
 }
